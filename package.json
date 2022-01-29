@@ -1,0 +1,19 @@
+{
+  "name": "bitcoin",
+  "version": "1.0.0",
+  "description": "We'd like to see if you can create your own simple web app using:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maruseyaro/bitcoin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maruseyaro/bitcoin/issues"
+  },
+  "homepage": "https://github.com/maruseyaro/bitcoin#readme"
+}
