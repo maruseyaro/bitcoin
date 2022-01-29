@@ -1,28 +1,9 @@
-async function fetchLatestPosts() {
+export async function bitcoinApifetchLatestPosts() {
   const url = "https://news.bitcoin.com/feed/";
   const res = await fetch(url);
-  const text = await res.text();
+  const xmlText = await res.text();
 
-  const parser = new DOMParser();
-
-  const doc = parser.parseFromString(text, "application/xml");
-  const items = doc.querySelectorAll("item");
-
-  let posts = [];
-
-  const min = Math.min(items.length, 4);
-
-  for (let i = 0; i < min; i++) {
-    const item = items[i];
-    const post = {
-      title: item.querySelector("title")?.textContent,
-      link: item.querySelector("link")?.textContent,
-    };
-
-    posts.push(post);
-  }
-
-  return posts;
+  return xmlText;
 }
 
 // {"price":29546,"stamp":1643430240}

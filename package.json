@@ -17,12 +17,12 @@
   },
   "homepage": "https://github.com/maruseyaro/bitcoin#readme",
   "dependencies": {
+    "@reduxjs/toolkit": "1.7.1",
     "core-js": "3.20.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-redux": "7.2.6",
     "recharts": "2.1.8",
-    "redux": "4.1.2",
     "styled-components": "5.3.3"
   },
   "devDependencies": {

@@ -3,7 +3,7 @@ import type { Configuration } from "webpack";
 const configuration: Configuration = {
   mode: "development",
   resolve: {
-    extensions: [".tsx", ".tsx", ".js", ".json"],
+    extensions: [".ts", ".tsx", ".js", ".json"],
   },
   module: {
     rules: [
