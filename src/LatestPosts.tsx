@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from "./store";
 import { fetchLatestPosts } from "./store/latestPosts";
 
@@ -23,24 +24,50 @@ export default function LatestPosts() {
   }
 
   return (
-    <ol>
-      {latestPosts.data.map((post, index) => (
-        <li key={index}>
-          <Post {...post} />
-        </li>
-      ))}
-    </ol>
+    <section>
+      <h1>The latest</h1>
+      <PostList>
+        {latestPosts.data.map((post, index) => (
+          <PostListItem key={index}>
+            <Post {...post} />
+          </PostListItem>
+        ))}
+      </PostList>
+    </section>
   );
 }
 
+const PostList = styled.ul`
+  list-style: none;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+`;
+
+const PostListItem = styled.li`
+  margin-bottom: 2em;
+`;
+
+const PostTile = styled.h1`
+  font-size: 16px;
+`;
+
+const PostLink = styled.a`
+  color: inherit;
+  text-decoration: none;
+
+  :hover {
+    color: #2793ff;
+  }
+`;
+
 function Post({ title, link }: PostProps) {
   return (
-    <article>
-      <h1>{title}</h1>
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        Read more
-      </a>
-    </article>
+    <PostLink href={link} target="_blank" rel="noopener noreferrer">
+      <article>
+        <PostTile>{title}</PostTile>
+      </article>
+    </PostLink>
   );
 }
 
